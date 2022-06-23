@@ -1,13 +1,33 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import styles from './styled';
 
 
 
 
 export default function Listagem({data}){
+  const navigation = useNavigation();
+
+  const handleopenplay =() => {
+    navigation.navigate('Pageplayer',{
+       key:data.key,
+       nome:data.nome,
+       pts:data.pts,
+       assit:data.assit,
+       fall:data.fall,
+       idade:data.idade,
+       peso:data.peso,
+       estatura:data.estatura,
+       cidade:data.cidade,
+       position:data.position,
+    });
+  }
+  
+
  return (
-  <View style={styles.viewplayer}>
+  <TouchableOpacity style={styles.viewplayer} onPress={handleopenplay} >
+   
 
   <View style={styles.viewpone}>
         
@@ -44,6 +64,6 @@ export default function Listagem({data}){
 
  
   </View>
-</View>
+</TouchableOpacity>
   );
 }

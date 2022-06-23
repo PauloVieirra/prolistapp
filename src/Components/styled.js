@@ -61,19 +61,27 @@ const styles = StyleSheet.create({
     },
     textname:{
         marginLeft:10,
-        fontSize:22,
+        fontSize:19,
         color:"#fff"
     },
     textnow:{
         marginLeft:10,
-        fontSize:15,
+        fontSize:14,
         color:"#fff"
     },
     textnowg:{
         marginLeft:4,
         fontSize:15,
         color:"#eee"
+    },
+
+    btnplay:{
+        width:"100%",
+        height:"100%",
+        
     }
+    
+
 
 
 

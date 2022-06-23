@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     },
     viewsub: {
         width: "100%",
-        height: "80%",
+        height: "70%",
         alignItems: 'center',
         backgroundColor: "#000",
     },
@@ -64,6 +64,44 @@ const styles = StyleSheet.create({
     viewpnow: {
         flex: 1,
         backgroundColor: "#eee"
+    },
+    video:{
+        position:"absolute",
+        top:0,bottom:0,right:0,left:0,
+        zIndex:0
+    },
+    anaunce:{
+        width:"100%",
+        height:"100%",
+        position:"absolute",
+        alignItems:'center',
+        justifyContent:'center',
+        zIndex:9
+    },
+    texteanounce:{
+        fontSize:30,
+        color:"#91F579",
+        
+    },
+    texteanouncethow:{
+        fontSize:30,
+        color:"#fff",
+        opacity: 0.7
+    },
+    context:{
+        flexDirection:'row',
+        marginTop:30,
+        width:"100%",
+    },
+    conttabbar:{
+        position:'absolute',
+        bottom:0,
+        flexDirection:'row',
+        width:"100%",
+        height:60,
+        backgroundColor:"#fff",
+        zIndex:10
+        
     }
 
 

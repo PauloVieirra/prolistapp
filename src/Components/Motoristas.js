@@ -25,6 +25,11 @@ export default function components() {
                 assit: chilItem.val().assit,
                 pts: chilItem.val().pts,
                 fall: chilItem.val().fall,
+                cidade: chilItem.val().cidade,
+                estatura: chilItem.val().estatura,
+                idade: chilItem.val().idade,
+                peso: chilItem.val().peso,
+                position: chilItem.val().position,
               };
 
               setUsuarios(oldArray => [...oldArray, data]);
