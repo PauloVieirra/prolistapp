@@ -14,7 +14,7 @@ export default function Preload() {
    <View style={styles.container}>
      <Video
                     style={styles.video}
-                    source={require("../../assets/bsk5.mp4")}
+                    source={require("../../assets/istockphoto.mp4")}
                     rate={0.7}
                     resizeMode="cover"
                     shouldPlay

@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react';
-import { AuthContext } from '../../Services/contexs/auth';
+import { AuthContext } from '../../../Services/contexs/auth';
 import { Platform, ScrollView,Text } from 'react-native';
-import {Background,Container,TextLogin,AreaInput, Input,BtnLogin,} from './styled';
+import {Background,Container,TextLogin,AreaInput, Input,BtnLogin} from './styled';
 
 
-export default function SignUp() {
+export default function Upteam() {
 
   const [nome,setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -13,10 +13,10 @@ export default function SignUp() {
   const [rg, setRg] = useState('');
   const [telefone, setTelefone] = useState('');
 
-  const { signUp } = useContext(AuthContext);
+  const { signUpTeam } = useContext(AuthContext);
 
-  function handleSignUp(){
-    signUp(email, password, nome,ano,telefone, rg);
+  function handleSignUpTeam(){
+    signUpTeam(email, password, nome,ano,telefone, rg);
   }
  
   
@@ -28,7 +28,7 @@ export default function SignUp() {
      <ScrollView style={{marginTop:100}}>
        <Container>
 
-            <Text>USER</Text>
+       <Text>TEAM</Text>
 
           
   
@@ -85,7 +85,7 @@ export default function SignUp() {
         
          
         
-           <BtnLogin onPress={handleSignUp}>
+           <BtnLogin onPress={handleSignUpTeam}>
              <TextLogin>Cadastrar</TextLogin>
            </BtnLogin>
        </Container>

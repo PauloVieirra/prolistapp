@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react';
-import { AuthContext } from '../../Services/contexs/auth';
+import { AuthContext } from '../../../Services/contexs/auth';
 import { Platform, ScrollView,Text } from 'react-native';
-import {Background,Container,TextLogin,AreaInput, Input,BtnLogin,} from './styled';
+import {Background,Container,TextLogin,AreaInput, Input,BtnLogin, } from './styled';
 
 
-export default function SignUp() {
+export default function Upfisicalpro() {
 
   const [nome,setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -12,11 +12,12 @@ export default function SignUp() {
   const [ano, setAno] = useState('');
   const [rg, setRg] = useState('');
   const [telefone, setTelefone] = useState('');
+  const [cidade, setCidade] = useState('');
 
-  const { signUp } = useContext(AuthContext);
+  const { signUpProff } = useContext(AuthContext);
 
   function handleSignUp(){
-    signUp(email, password, nome,ano,telefone, rg);
+    signUpProff(email, password, nome,ano,telefone, rg,cidade);
   }
  
   
@@ -28,9 +29,9 @@ export default function SignUp() {
      <ScrollView style={{marginTop:100}}>
        <Container>
 
-            <Text>USER</Text>
-
-          
+       
+        
+       <Text>PROFF</Text>
   
            <AreaInput>
            <Input
@@ -77,6 +78,14 @@ export default function SignUp() {
            autoCapitalize="none"
            value={ano}
            onChangeText={(text) => setAno(text)}
+           />
+
+<Input
+           placeholder="Cidade"
+           autoCorrect={false}
+           autoCapitalize="none"
+           value={cidade}
+           onChangeText={(text) => setCidade(text)}
            />
 
 

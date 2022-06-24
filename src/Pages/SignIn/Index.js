@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import { AuthContext } from '../../Services/contexs/auth';
+import { LinearGradient } from 'expo-linear-gradient';
 import {Background,
    Container,
    TextLogin,
@@ -29,6 +30,12 @@ export default function SignIn() {
  
  return (
    <Background>
+        <LinearGradient
+          colors={['#1D1D38', '#1D1D25', '#1D1D25' ]}
+          style={{flex:1}}
+          start={{ x: 1.2, y: 0.5 }}
+          end={{ x: 0.5, y: 1.8 }}
+        >
        <Container>
       
             
@@ -60,7 +67,7 @@ export default function SignIn() {
            </BtnLogin>
 
            <AreRecovUp>
-             <CadText onPress={() => navigation.navigate('SignUp')}>
+             <CadText onPress={() => navigation.navigate('SignCont')}>
              <SingUpText>Criar minha conta</SingUpText>
              </CadText>
              <RecoveryText onPress={() => navigation.navigate('Recovery')}>
@@ -71,6 +78,7 @@ export default function SignIn() {
 
                  
        </Container>
+       </LinearGradient>
    </Background>
   );
 }

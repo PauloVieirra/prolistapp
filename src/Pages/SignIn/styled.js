@@ -2,7 +2,6 @@ import styled from "styled-components/native";
 
 export const Background = styled.View`
 flex:1;
-background-color:#000 rgba(0,0,0,0.75);
 `;
 
 export const Container = styled.KeyboardAvoidingView`
@@ -28,8 +27,10 @@ export const Input = styled.TextInput.attrs({
 font-size:17px;
 color: rgba(0,0,0,0.70);
 margin-bottom:15px;
+border-width: 1px;
+border-color: 'rgba(0,0,0,0.40)';
 padding:10px;
-border-radius:7px;
+border-radius:30px;
 width:90%;
 background: rgba(255,255,255,0.70)`;
 
@@ -64,8 +65,8 @@ font-size:20;
 export const BtnLogin = styled.TouchableOpacity`
 width:90%;
 height:45px;
-background-color:#EBA054;
-border-radius:12px;
+background-color:#F7D25A;
+border-radius:30px;
 align-items:center;
 justify-content:center;
 margin-top:30;

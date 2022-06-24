@@ -12,7 +12,14 @@ export default function Tabbar() {
 
     const handlegohome =() => {
         navigation.navigate('Home');
-      }
+    }
+    const handlegouser =() => {
+        navigation.navigate('Profileuser');
+    }
+
+    const handlegoteam =() => {
+        navigation.navigate('Stolk');
+    }
 
     return (
         <View style={styles.conttabbar}>
@@ -25,15 +32,19 @@ export default function Tabbar() {
                 <TouchableOpacity style={styles.tabint} onPress={handlegohome} >
                     <Ionicons name="basketball" size={35} color="white" />
                 </TouchableOpacity>
-                <View style={styles.tabint}>
-                    <Octicons name="feed-heart" size={35} color="white" />
-                </View>
+
+                <TouchableOpacity style={styles.tabint} onPress={handlegoteam} >
+                <Octicons name="feed-heart" size={35} color="white" />
+                </TouchableOpacity>
+
                 <View style={styles.tabint}>
                     <MaterialCommunityIcons name="weight-kilogram" size={35} color="white" />
                 </View>
-                <View style={styles.tabint}>
-                    <Ionicons name="person-circle-sharp" size={35} color="white" />
-                </View>
+                
+                <TouchableOpacity style={styles.tabint} onPress={handlegouser} >
+                <Ionicons name="person-circle-sharp" size={35} color="white" />
+                </TouchableOpacity>
+              
             </LinearGradient>
 
         </View>

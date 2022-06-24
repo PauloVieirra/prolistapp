@@ -78,16 +78,13 @@ function AuthProvider({children}){
 
 
     //Cadastrando usuario
-    async function signUp(email, password, nome, veiculo, ano, modelo, cor, telefone,rg){
+    async function signUp(email, password, nome, ano, telefone,rg){
         await firebase.auth().createUserWithEmailAndPassword(email,password)
         .then(async (value)=>{
             let uid = value.user.uid;
             await firebase.database().ref('users').child(uid).set({
                 nome: nome,
-                veiculo: veiculo,
-                modelo: modelo,
                 ano: ano,
-                cor: cor,
                 telefone: telefone,
                 rg: rg
                 
@@ -99,17 +96,76 @@ function AuthProvider({children}){
                     email: value.user.email,
                     telefone: telefone, 
                     rg: rg,
-                    veiculo: veiculo,
-                    ano: ano,
-                    cor: cor,
-                    modelo: modelo,  
+                    ano: ano, 
                 };
                 setUser(data);
                 storageUser(data);
             })
         })
     }
-    console.log(user);
+
+
+    //Cadastrando clube
+    async function signUpTeam(email, password, nome, ano, telefone,rg){
+        await firebase.auth().createUserWithEmailAndPassword(email,password)
+        .then(async (value)=>{
+            let uid = value.user.uid;
+            await firebase.database().ref('teams').child(uid).set({
+                nome: nome,
+                email: email,
+                telefone: telefone,
+                rg: rg,
+                ano: ano,
+                
+                
+            })
+            .then(()=>{
+                let data = {
+                    uid: uid,
+                    nome: nome,
+                    email: value.user.email,
+                    telefone: telefone, 
+                    rg: rg,
+                    ano: ano,
+                   
+                  
+                };
+                setUser(data);
+                storageUser(data);
+            })
+        })
+    }
+
+      //Cadastrando Profissionais
+      async function signUpProff(email, password, nome, cidade, ano, telefone,rg){
+        await firebase.auth().createUserWithEmailAndPassword(email,password)
+        .then(async (value)=>{
+            let uid = value.user.uid;
+            await firebase.database().ref('proff').child(uid).set({
+                nome: nome,
+                cidade: cidade,
+                email: email,
+                telefone: telefone,
+                
+                
+            })
+            .then(()=>{
+                let data = {
+                    uid: uid,
+                    nome: nome,
+                    cidade:cidade,
+                    email: value.user.email,
+                    telefone: telefone, 
+                    rg: rg,
+                   
+                    ano: ano, 
+                };
+                setUser(data);
+                storageUser(data);
+            })
+        })
+    }
+
 
     //Cadastro Amigão
     async function cadAmigao(nome,telefone, cidade){
@@ -131,7 +187,7 @@ function AuthProvider({children}){
       }
 
     return(
-        <AuthContext.Provider value={{ signed: !!user , user, signUp, signIn, loading,signOut,cadAmigao,  }}>
+        <AuthContext.Provider value={{ signed: !!user , user, signUp, signUpTeam,signUpProff, signIn, loading,signOut,cadAmigao,  }}>
             {children}
         </AuthContext.Provider>  
        );
