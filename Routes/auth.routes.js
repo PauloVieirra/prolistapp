@@ -6,6 +6,7 @@ import SignIn from "../src/Pages/SignIn/Index";
 import SignUp from "../src/Pages/SignUp/index";
 import Upteam from "../src/Pages/SignUp/Upteam";
 import SignCont from "../src/Pages/SignUp/SignCont";
+import Upfisicalpro from "../src/Pages/SignUp/Upfisicalpro";
 
 
 const AuthStack = createNativeStackNavigator();
@@ -41,6 +42,12 @@ function AuthRoutes(){
 <AuthStack.Screen 
            name="SignCont" 
            component={SignCont}
+           options={{headerShown: false}}
+           />
+
+<AuthStack.Screen 
+           name="Upfisicalpro" 
+           component={Upfisicalpro}
            options={{headerShown: false}}
            />
 

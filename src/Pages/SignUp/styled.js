@@ -86,3 +86,20 @@ margin-top:15px;
 export const TextLogin = styled.Text`
 font-size:20;
 `;
+
+export const Containg = styled.View`
+width:100%;
+height:200px;
+background-color:#EBA054;
+align-items:center;
+justify-content:center;
+`
+
+export const ContImgPick = styled.View`
+width:120px;
+height:120px;
+border-radius:20px;
+background-color:#eee;
+margin-top:20px;
+
+`

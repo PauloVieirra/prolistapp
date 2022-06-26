@@ -1,7 +1,8 @@
 import React, {useState, useContext} from 'react';
 import { AuthContext } from '../../Services/contexs/auth';
 import { Platform, ScrollView,Text } from 'react-native';
-import {Background,Container,TextLogin,AreaInput, Input,BtnLogin,} from './styled';
+import {Background,Container,TextLogin,AreaInput, Input,BtnLogin,Containg,ContImgPick} from './styled';
+import styles from './SignCont/styled';
 
 
 export default function SignUp() {
@@ -24,11 +25,13 @@ export default function SignUp() {
    <Background
    behavior={Platform.OS === 'ios' ? 'padding' : ''} enabled>
      <>
-    
-     <ScrollView style={{marginTop:100}}>
+      <Containg>
+        <ContImgPick></ContImgPick>
+      </Containg>
+     <ScrollView style={{marginTop:20}}>
        <Container>
 
-            <Text>USER</Text>
+            
 
           
   

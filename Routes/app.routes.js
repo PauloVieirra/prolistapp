@@ -5,6 +5,7 @@ import Home from "../src/Pages/Home/Index";
 import Pageplayer from "../src/Pages/Pageplayer/Index"
 import Profileuser from "../src/Pages/Profileuser/Index";
 import Stolk from "../src/Pages/Stolk/Index";
+import Pro from "../src/Pages/Pro/Index";
 
 
 const AppStack = createStackNavigator();
@@ -18,6 +19,7 @@ function AppRoutes(){
            <AppStack.Screen name="Pageplayer" component={Pageplayer}options={{headerShown: false}}/>
            <AppStack.Screen name="Profileuser" component={Profileuser}options={{headerShown: false}}/>
            <AppStack.Screen name="Stolk" component={Stolk}options={{headerShown: false}}/>
+           <AppStack.Screen name="Pro" component={Pro}options={{headerShown: false}}/>
 
            
        </AppStack.Navigator>

@@ -21,6 +21,11 @@ export default function Tabbar() {
         navigation.navigate('Stolk');
     }
 
+    const handlegopro =() => {
+        navigation.navigate('Pro');
+    }
+
+
     return (
         <View style={styles.conttabbar}>
             <LinearGradient
@@ -37,9 +42,9 @@ export default function Tabbar() {
                 <Octicons name="feed-heart" size={35} color="white" />
                 </TouchableOpacity>
 
-                <View style={styles.tabint}>
+                <TouchableOpacity style={styles.tabint} onPress={handlegopro} >
                     <MaterialCommunityIcons name="weight-kilogram" size={35} color="white" />
-                </View>
+                </TouchableOpacity>
                 
                 <TouchableOpacity style={styles.tabint} onPress={handlegouser} >
                 <Ionicons name="person-circle-sharp" size={35} color="white" />

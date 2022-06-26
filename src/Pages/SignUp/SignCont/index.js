@@ -1,71 +1,71 @@
-import React, { useState } from 'react';
-import { View,Text,TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, TouchableOpacity, Animated,Dimensions } from 'react-native';
 import styles from './styled';
-
-import SignUp from '../index';
-import Upfisicalpro from '../Upfisicalpro';
-import Upteam from '../Upteam';
-
+import { useNavigation } from '@react-navigation/native';
+const { width } = Dimensions.get("window");
+const CARD_HEIGHT = 220;
+const CARD_WIDTH = width * 0.7;
+const SPACING_FOR_CARD_INSET = width * 0.1 -10;
 
 export default function SignCont() {
 
-  const [cadUser, setCaduser] = useState('');
-  const [cadPro, setCadpro] = useState('1');
-  const [cadTeam, setCadteam] = useState('1');
+  const _scrollView = React.useRef(null);
+  const navigation = useNavigation();
 
-  const showsignin =() => {
-    setCadpro('1');
-    setCadteam('1');
-    setCaduser('');
-  }
-  const showsphisicalpro =() => {
-    setCadteam('1');
-    setCaduser('1'); 
-    setCadpro('');
-  }
-  const showupteam =() => {
-    setCadpro('1');
-    setCaduser('1');
-    setCadteam('');
-  }
 
- 
 
   return (
     <View style={styles.container}>
 
-<View style={styles.viewsup}>
+      <Animated.ScrollView
+        ref={_scrollView}
+        horizontal
+        scrollEventThrottle={1}
+        showsHorizontalScrollIndicator={false}
+        style={styles.scrollView}
+        pagingEnabled
+        snapToInterval={CARD_WIDTH + 20}
+        snapToAlignment="center"
+        contentInset={{ // iOS only
+          top: 0,
+          left: SPACING_FOR_CARD_INSET,
+          bottom: 0,
+          right: SPACING_FOR_CARD_INSET
+        }}
+        contentContainerStyle={{
+          paddingHorizontal: Platform.OS === 'android' ? SPACING_FOR_CARD_INSET : 0
+        }}
+       >
+
+
+        <View  style={styles.viewsub}>
+         
+           <View style={styles.cont}>
+            <TouchableOpacity style={styles.viewsubint} onPress={() => navigation.navigate('SignUp')}>
+              <Text style={{ color: "#fff" }}>Cadastro</Text>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.cont}>
+            <TouchableOpacity style={styles.viewsubint} onPress={() => navigation.navigate('Upteam')}>
+              <Text style={{ color: "#fff" }}>Cadastro de Equipes</Text>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.cont}>
+            <TouchableOpacity style={styles.viewsubint} onPress={() => navigation.navigate('Upfisicalpro')}>
+              <Text style={{ color: "#fff" }}>Cadastro de Proffisionais</Text>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.cont}>
+            <TouchableOpacity style={styles.viewsubint} onPress={() => navigation.navigate('SignUp')}>
+              <Text style={{ color: "#fff" }}>Patrocinadores</Text>
+            </TouchableOpacity>
+            </View>
       
-       
-         {!cadUser &&
-           <SignUp />
-         }
-       
-       
-         {!cadPro &&
-           <Upteam />
-         }
 
-         {!cadTeam &&
-           <Upfisicalpro />
-         }
+        </View>
 
-        
+      </Animated.ScrollView>
 
-
-      </View>
-
-      <View style={styles.viewsub}>
-        <TouchableOpacity style={styles.viewsubint} onPress={showsignin} >
-                 <Text>1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.viewsubint} onPress={showsphisicalpro}>
-        <Text>2</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.viewsubint} onPress={showupteam}>
-        <Text>3</Text>
-        </TouchableOpacity>
-      </View>
 
 
 
